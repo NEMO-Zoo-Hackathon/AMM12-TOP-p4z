@@ -75,7 +75,7 @@ Ensure sediment outputs in XML definitions
 
 
 
-🤝 Acknowledgements
+## 🤝 Acknowledgements
 
 Thanks to mentors and contributors (Julien and Renaud) involved in debugging and testing this setup.
 
