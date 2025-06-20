@@ -19,11 +19,13 @@ Compile:
 ./makenemo -n AMM12_Hack -r AMM12 -m auto -j 4
 
 Prepare input files:
+
 cd $HOME/ALL_NEMO_default/nemo_5.0/sette/
 
 ./sette_fetch_inputs.sh
 
 tar -xvzf AMM12_v5.0.0.tar.gz
+
 mv AMM12_v5.0.0/* ../cfgs/AMM12_Hack/EXP00/
 
 Run the model: example: ./nemo
@@ -32,12 +34,15 @@ Run the model: example: ./nemo
 ## Step 2: Add Biogeochemistry with PISCES (p2z)
 
 Compile:
+
 ./makenemo -n AMM12_HackTop -r AMM12 -m auto -j 4
+
 Add TOP to work_cfgs.txt
 
 Copy base EXP00:
 
 cp -r AMM12_Hack/EXP00/* AMM12_HackTop/EXP00/
+
 Add XML config files from ORCA2_OFF_PISCES:
 
 field_def_nemo-pisces.xml
@@ -51,10 +56,13 @@ Run with and without open boundaries: ln_bdy = .true. / .false.
 ## Step 3: Enable Sediment Model (PISCES p4z)
 
 Compile:
+
 ./makenemo -n AMM12_HackTop4z -r AMM12 -m auto -j 4
+
 Activate in namelist_pisces_cfg:
 
 ln_p4z = .true.
+
 Run without the sediment first
 
 Copy and configure:
@@ -68,5 +76,6 @@ Ensure sediment outputs in XML definitions
 
 
 🤝 Acknowledgements
-Thanks to mentors and contributors involved in debugging and testing this setup, especially during the Hackathon phase.
+
+Thanks to mentors and contributors (Julien and Renaud) involved in debugging and testing this setup.
 
